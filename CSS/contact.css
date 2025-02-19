@@ -1,0 +1,74 @@
+.contact-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px; /* Reduced margin */
+}
+
+.input-box {
+  margin-bottom: 20px; /* Reduced bottom margin */
+}
+
+.input-box input,
+.input-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px 0; /* Reduced margin between input fields */
+}
+
+form {
+  background: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px magenta;
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 70rem;
+  margin: 1rem auto;
+  width: 1000px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0; /* Reduced space between rows */
+  width: 100%;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 2px solid magenta;
+  background: lightgray;
+  font-weight: bold;
+}
+
+.row input {
+  width: 48%; /* Ensures two inputs per row are properly aligned */
+}
+
+textarea {
+  height: 150px; /* Reduced height of textarea */
+}
+
+.contact-button {
+  width: 100%;
+  padding: 10px;
+  background: gray;
+  color: magenta;
+  font-weight: bold;
+  border: 2px solid magenta;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-button:hover {
+  background: magenta;
+  color: white;
+}

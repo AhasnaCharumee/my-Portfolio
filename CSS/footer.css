@@ -1,0 +1,134 @@
+footer {
+  background-color: #222;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-section {
+  flex: 1;
+  padding: 20px;
+  min-width: 250px;
+}
+
+/* Footer h1 styles */
+.footer-left h1,
+.footer-center h1,
+.footer-section h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: 'Ruslan', sans-serif !important; /* Force Ruslan font to apply */
+}
+
+
+/* Font styling for Noto Serif Hentaigana */
+.noto-serif-hentaigana-uniquifier h1 {
+  font-family: "Noto Serif Hentaigana", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Add Ruslan font styling */
+.ruslan-font h1 {
+  font-family: 'Ruslan', sans-serif; /* Assuming Ruslan is available in your fonts */
+  font-weight: bold; /* Adjust as needed */
+  font-style: normal;
+}
+
+.footer-left p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-center p,
+.footer-section p {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 10;
+  justify-content: center;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 12px;
+  background-color: #111;
+  padding: 10px 0;
+}
+.social-icons a {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  background: transparent;
+  border: 2px solid magenta;
+  border-radius: 50%;
+  color: #ff04ff;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  object-fit: cover;
+  margin: 0 10px;
+}
+
+.social-icons a:hover {
+  color: #d400d4;
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 0 0 20px #d400d4;
+  background-color: #d400d4;
+  border: 2px solid #d400d4;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+.social-icons a {
+  line-height: 3.5em;
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 50%;
+  position: relative;
+}
+.social-icons a img {
+  width: auto;
+  height: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@font-face {
+  font-family: 'Ruslan';
+  src: url('path/to/ruslan-font.woff2') format('woff2'),
+       url('path/to/ruslan-font.woff') format('woff');
+}
+
+.footer-left h1,
+.footer-center h1,
+.footer-section h1 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-family: "Ruslan Display", sans-serif !important; /* Use Google font */
+}
+.footer-center p,
+.footer-section p {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 10;
+  justify-content: center;
+}

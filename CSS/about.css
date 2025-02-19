@@ -1,0 +1,43 @@
+.label {
+    font-weight: bold;
+    color: white;
+  }
+  .highlight {
+    color: #ff00ff; /* Pink text */
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+  .About-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border: 5px solid #ff00ff; /* Default Pink Border */
+    transition: border 0.3s ease-in-out;
+  }
+
+  .About-image:hover {
+    border: 10px solid #ffffff;
+    /* Change border to white on hover */
+  }
+  .info-section {
+    max-width: 500px;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 100px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px #800080; /* Purple glow */
+  }
+
+  p {
+    font-size: 18px;
+    margin: 15px 0;
+  }

@@ -1,0 +1,72 @@
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 50px;
+  }
+
+  .work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work img {
+    width: 80%; /* Reduce the width (adjust percentage as needed) */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+  }
+
+  .layer {
+    width: 80%;
+    height: 0%;
+    background: linear-gradient(to right, #e327e3, #ffc0cb);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    transition: height 0.5s;
+    color: black;
+  }
+
+  .layer h3 {
+    font-weight: 8500;
+    margin-bottom: 20px;
+  }
+
+  .layer a {
+    margin-top: 20px;
+    color: #ff04ff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #382020;
+    width: 60px;
+    height: 60;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  .work:hover img {
+    transform: scale(0.9); /* Reduce the image size to 90% */
+    width: 80%;
+  }
+
+  .work:hover .layer {
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .projects form .btn {
+    margin-top: 2rem;
+    align-items: center;
+  }

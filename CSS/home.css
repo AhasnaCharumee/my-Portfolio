@@ -1,0 +1,269 @@
+
+body {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+* {
+  margin: 20;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  padding:1rem 9%;;
+}
+.header .logo {
+  text-decoration: none;
+  color: white; 
+  font-size: 24px;
+  transform: scale(1.1);
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.header .logo:hover {
+  color: #ff04ff;
+  transition: 0.3s ease-in-out;
+  transform: translateY(4px); 
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 58px;
+  margin-left: 2.5rem;
+  color: white;
+  font-weight: 550;
+  
+}
+nav ul li a {
+  color: white; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff04ff;
+}
+nav ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: #ff04ff;
+  transition: width 0.3s ease-in-out;
+}
+nav ul li:hover::after {
+  width: 100%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 120px;
+  /* justify-content: space-around;
+  margin-top: 56px; */
+}
+.text-section {
+  max-width: 500px;
+}
+.text-section {
+  max-width: 500px;
+}
+.text-animation {
+  font-size: 34px;
+  font-weight: 700;
+  min-width: 280px;
+}
+
+.text-animation span {
+  position: relative;
+}
+
+.text-animation span::before {
+  content: 'Web Developer';
+  color: magenta;
+  animation: words 20s infinite;
+}
+
+.text-animation span::after {
+  content: "";
+  background-color: magenta;
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid magenta;
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+
+}
+
+
+
+@keyframes words {
+
+  0%,
+  20% {
+      content: 'Web Developer';
+  }
+
+  40% {
+      content: 'UI/UX Designer';
+  }
+
+  60% {
+      content: 'Software Developer';
+  }
+
+  80% {
+      content: 'Photographer';
+  }
+
+  80% {
+      content: 'Writer';
+  }
+}
+
+@keyframes typing {
+
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+      width: 0;
+  }
+
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+      width: calc(100% + 8px);
+  }
+}
+
+
+.social-icons {
+  margin-top: 10px;
+}
+.social-icons a img {
+  width: 71px;
+  height: 4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.social-icons a img {
+  width: 40px;
+  margin-right: 10px;
+}
+.social-icons a {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  line-height: 41px;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+  color: #ff04ff;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+}
+.social-icons a:hover {
+  color: #d400d4;
+  transform: scale(1.3) translateY(-5px);
+  box-shadow: 0 0 20px #d400d4;
+  background-color: #d400d4;
+  border: 2px solid #d400d4;
+  align-items: center;
+  justify-content: center;
+}
+.cv-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff04ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.image-section {
+  position: relative;
+}
+.profile-image {
+  width: 400px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ff04ff;
+  top: 9rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.profile-image:hover {
+  box-shadow: 0 0 50px, 0 0 100px;
+  color: #ff04ff;
+}
+.cv-button {
+  margin-top: 42px;
+  padding: 10px 20px;
+  background-color: #ff04ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.cv-button:hover {
+  background-color: #d400d4; 
+  transform: scale(1.1); 
+  box-shadow: 0 0 50px, 0 0 100px;
+}
+.cv-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff04ff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3sease, transform 0.3sease;
+}
+
+
+
