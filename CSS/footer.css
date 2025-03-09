@@ -15,23 +15,23 @@ footer {
 
 .footer-left,
 .footer-center,
-.footer-section {
+.footer-section-contact {
   flex: 1;
-  padding: 20px;
+  padding: 40px;
   min-width: 250px;
 }
 
-/* Footer h1 styles */
+
 .footer-left h1,
 .footer-center h1,
-.footer-section h1 {
+.footer-section-contact h1 {
   font-size: 22px;
   margin-bottom: 10px;
-  font-family: 'Ruslan', sans-serif !important; /* Force Ruslan font to apply */
+  font-family: 'Ruslan', sans-serif !important; 
 }
 
 
-/* Font styling for Noto Serif Hentaigana */
+
 .noto-serif-hentaigana-uniquifier h1 {
   font-family: "Noto Serif Hentaigana", serif;
   font-optical-sizing: auto;
@@ -39,10 +39,10 @@ footer {
   font-style: normal;
 }
 
-/* Add Ruslan font styling */
+
 .ruslan-font h1 {
-  font-family: 'Ruslan', sans-serif; /* Assuming Ruslan is available in your fonts */
-  font-weight: bold; /* Adjust as needed */
+  font-family: 'Ruslan', sans-serif; 
+  font-weight: bold; 
   font-style: normal;
 }
 
@@ -52,10 +52,10 @@ footer {
 }
 
 .footer-center p,
-.footer-section p {
+.footer-section-contact p {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 18px;
   margin: 10;
   justify-content: center;
 }
@@ -119,16 +119,181 @@ footer {
 
 .footer-left h1,
 .footer-center h1,
-.footer-section h1 {
+.footer-section-contact h1 {
   font-size: 22px;
   margin-bottom: 10px;
-  font-family: "Ruslan Display", sans-serif !important; /* Use Google font */
+  font-family: "Ruslan Display", sans-serif !important; 
 }
 .footer-center p,
-.footer-section p {
+.footer-section-contact p {
   display: flex;
   align-items: center;
   font-size: 14px;
   margin: 10;
   justify-content: center;
+}
+.footer-section-contact {
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media only screen and (max-width: 320px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+
+ 
+ 
+.footer-container {
+  flex-direction: column;
+  align-items: center;
+}
+.footer-left,
+.footer-center,
+.footer-section-contact {
+  text-align: center;
+  padding: 10px;
+  min-width: 100%;
+}
+}
+
+
+@media only screen and (max-width: 375px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+
+ 
+  
+
+.footer-container {
+  flex-direction: column;
+  text-align: center;
+}
+}
+
+
+@media only screen and (max-width: 425px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+  
+ 
+form {
+  width: 90%;
+}
+
+.row {
+  flex-direction: column;
+}
+
+.row input {
+  width: 100%;
+}
+.footer-container {
+  flex-direction: column;
+  text-align: center;
+}
+  .footer-container
+  .footer-section-contact{
+    margin-left:10px;
+  }
+  .footer-container
+  .footer-left{
+    margin-right:-50px;
+    
+    
+  }
+  .footer-container
+  .footer-left
+  .social-icons
+  {
+    font-size:10px;
+    
+  }
+}
+@media screen and (max-width: 768px) {
+  .navigation{
+      display:none;
+    }
+  
+  
+  
+  .footer-left,
+  .footer-center,
+  .footer-section-contact {
+    min-width: 40px;
+    margin-left:-128px;
+  }
+    .footer-container{
+      gap:0.1px;
+      margin-right:0;
+      margin-left:-1;
+      margin-top:-40px;
+    }
+  .body{
+    margin:0;
+  }
+  }
+  
+  
+  
+
+@media screen and (max-width: 1024px) {
+  
+ 
+  form {
+    width: 70%;
+  }
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+@media screen and (max-width: 1440px) {
+ 
+  form {
+    width: 85%;
+  }
+  .footer-container {
+    max-width: 85%;
+  }
 }

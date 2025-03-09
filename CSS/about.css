@@ -1,43 +1,240 @@
 .label {
-    font-weight: bold;
-    color: white;
+  font-weight: bold;
+  color: white;
+  width: 150px; 
+  display: inline-block; 
+}
+
+.highlight {
+  color: #ff00ff;
+}
+
+.About-image {
+  margin-left: 150px;
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border: 5px solid #ff00ff; 
+  transition: border 0.3s ease-in-out;
+}
+
+.About-image:hover {
+  border: 10px solid #ffffff; 
+}
+
+.info-section {
+  max-width: 600px;
+}
+
+.container {
+  display: flex;
+  gap: 80px; 
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 2px 4px #800080; 
+}
+
+p {
+  font-size: 18px;
+  text-align: left;
+}
+
+.details p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media only screen and (max-width: 320px) {
+  #burger {
+    display: block;
   }
-  .highlight {
-    color: #ff00ff; /* Pink text */
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
   }
 
-  a:hover {
-    text-decoration: underline;
-  }
+ 
   .About-image {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border: 5px solid #ff00ff; /* Default Pink Border */
-    transition: border 0.3s ease-in-out;
+    width: 100%;
+    max-width: 280px;
   }
 
-  .About-image:hover {
-    border: 10px solid #ffffff;
-    /* Change border to white on hover */
-  }
   .info-section {
-    max-width: 500px;
-  }
-  .container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 100px;
-  }
-  h1 {
-    text-align: center;
-    font-size: 40px;
-    color: white;
-    text-shadow: 2px 2px 4px #800080; /* Purple glow */
+    padding: 0 10px;
   }
 
-  p {
-    font-size: 18px;
-    margin: 15px 0;
+  .info-section h1 {
+    font-size: 20px;
   }
+
+  .details {
+    font-size: 12px;
+  }
+
+}
+
+@media only screen and (max-width: 375px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+
+ 
+  .About-image {
+    width: 95%;
+    max-width: 300px;
+  }
+
+  .info-section h1 {
+    font-size: 22px;
+  }
+
+  .details {
+    font-size: 13px;
+  }
+
+}
+
+@media only screen and (max-width: 425px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+ 
+  .About-image {
+    
+    max-width: 500px;
+    margin-bottom: -120px;
+    margin-right:455px
+    
+  }
+  .container{
+    margin-left:60px;
+  }
+  .container 
+  .details{
+    margin-left:-734px;
+    
+    
+  }
+ .container
+  .info-section
+  .details
+  .label{
+    margin-left:20px;
+  }
+  .container
+  .info-section
+  .details
+.highlight{
+    margin-left:-40px;
+  }
+
+ .container 
+  .details p{
+    font-size:11px;
+  }
+
+  .info-section {
+    width: 100%;
+    
+    
+    
+  }
+
+  .info-section h1 {
+    font-size: 21px;
+  }
+.details p{
+  font-size:16px;
+  
+}
+ 
+}
+@media screen and (max-width: 768px) {
+  
+  .navigation{
+    display:none;
+  }
+.about h1{
+  font-size:40px;
+  margin-left: -16px;
+}
+.image-section{
+   margin-top: -509px;
+   margin-left: -124px;
+}
+.details{
+  margin-top: 350px;
+    margin-left:-555px;
+ 
+}
+  
+.About-image{ 
+  margin-top: 150px;
+    margin-left:200px;
+}
+
+ 
+.body{
+  margin:0;
+}
+  }
+  
+  
+  
+
+@media screen and (max-width: 1024px) {
+ 
+  .About-image {
+      width: 50%;
+      height: auto;
+  }
+
+  .info-section h1 {
+      font-size: 36px;
+  }
+
+  
+}
+
+
+@media screen and (max-width: 1440px) {
+  
+  .About-image {
+      width: 40%;
+      height: auto;
+  }
+
+
+}
+

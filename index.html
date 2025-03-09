@@ -4,295 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <style>
-      /* Footer h1 styles */
-      .footer-left h1,
-      .footer-center h1,
-      .footer-section h1 {
-        font-size: 22px;
-        margin-bottom: 10px;
-        font-family: "Ruslan Display", sans-serif !important; /* Use Google font */
-      }
-      .footer-center p,
-      .footer-section p {
-        display: flex;
-        align-items: center;
-        font-size: 14px;
-        margin: 10;
-        justify-content: center;
-      }
-
-      
-body {
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
-}
-* {
-  margin: 20;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-}
-
-
-header {
-  display: flex;
-  justify-content: space-between;
-  backdrop-filter: blur(10px);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  background: rgba(0, 0, 0, 0.7);
-  align-items: center;
-  padding:1rem 9%;;
-}
-.header .logo {
-  text-decoration: none;
-  color: white; 
-  font-size: 24px;
-  transform: scale(1.1);
-  cursor: pointer;
-  display: inline-block;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.header .logo:hover {
-  color: #ff04ff;
-  transition: 0.3s ease-in-out;
-  transform: translateY(4px); 
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 58px;
-  margin-left: 2.5rem;
-  color: white;
-  font-weight: 550;
-  
-}
-nav ul li a {
-  color: white; 
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #ff04ff;
-}
-nav ul li::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 3px;
-  background: #ff04ff;
-  transition: width 0.3s ease-in-out;
-}
-nav ul li:hover::after {
-  width: 100%;
-}
-.container {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  padding: 97px;
-  /* justify-content: space-around;
-  margin-top: 56px; */
-}
-.text-section {
-  max-width: 500px;
-}
-.text-section {
-  max-width: 500px;
-}
-.text-animation {
-  font-size: 34px;
-  font-weight: 700;
-  min-width: 280px;
-}
-
-.text-animation span {
-  position: relative;
-}
-
-.text-animation span::before {
-  content: 'Web Developer';
-  color: magenta;
-  animation: words 20s infinite;
-}
-
-.text-animation span::after {
-  content: "";
-  background-color: magenta;
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid magenta;
-  right: -8px;
-  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
-
-}
-
-
-
-@keyframes words {
-
-  0%,
-  20% {
-      content: 'Web Developer';
-  }
-
-  40% {
-      content: 'UI/UX Designer';
-  }
-
-  60% {
-      content: 'Software Developer';
-  }
-
-  80% {
-      content: 'Photographer';
-  }
-
-  80% {
-      content: 'Writer';
-  }
-}
-
-@keyframes typing {
-
-  10%,
-  15%,
-  30%,
-  35%,
-  50%,
-  55%,
-  70%,
-  75%,
-  90%,
-  95% {
-      width: 0;
-  }
-
-  5%,
-  20%,
-  25%,
-  40%,
-  45%,
-  60%,
-  65%,
-  80%,
-  85% {
-      width: calc(100% + 8px);
-  }
-}
-
-
-.social-icons {
-  margin-top: 10px;
-}
-.social-icons a img {
-  width: 71px;
-  height: 4em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.social-icons a img {
-  width: 40px;
-  margin-right: 10px;
-}
-.social-icons a {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  width: 46px;
-  height: 46px;
-  line-height: 41px;
-  background: transparent;
-  border: 2px solid black;
-  border-radius: 50%;
-  color: #ff04ff;
-  transition: 0.3s ease-in-out;
-  text-align: center;
-}
-.social-icons a:hover {
-  color: #d400d4;
-  transform: scale(1.3) translateY(-5px);
-  box-shadow: 0 0 20px #d400d4;
-  background-color: #d400d4;
-  border: 2px solid #d400d4;
-  align-items: center;
-  justify-content: center;
-}
-.cv-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #ff04ff;
-  color: white;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 8px;
-}
-.image-section {
-  position: relative;
-}
-.profile-image {
-  width: 400px;
-  border-radius: 50%;
-  box-shadow: 0 0 25px #ff04ff;
-  top: 9rem;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.profile-image:hover {
-  box-shadow: 0 0 50px, 0 0 100px;
-  color: #ff04ff;
-}
-.cv-button {
-  margin-top: 42px;
-  padding: 10px 20px;
-  background-color: #ff04ff;
-  color: white;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.cv-button:hover {
-  background-color: #d400d4; 
-  transform: scale(1.1); 
-  box-shadow: 0 0 50px, 0 0 100px;
-}
-.cv-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #ff04ff;
-  color: white;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.3sease, transform 0.3sease;
-}
-
-
-
-
-    </style>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
     <link rel="stylesheet" href="/CSS/home.css" />
     <link rel="stylesheet" href="/CSS/about.css" />
@@ -315,7 +33,18 @@ nav ul li:hover::after {
     <header class="header">
       <a href="#home" class="logo">Meet me</a>
 
-      <nav>
+      <nav class="navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#service">Services</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
+      <nav class="menu-panel" id="menu-panel-id">
+        <button class="close-btn" id="btn-close">&times;</button>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -325,7 +54,26 @@ nav ul li:hover::after {
         </ul>
       </nav>
     </header>
+    <script>
+      const burger = document.getElementById("burger");
+      const menuPanel = document.getElementById("menu-panel-id");
+      const closeBtn = document.getElementById("btn-close");
 
+      burger.addEventListener("click", () => {
+        menuPanel.classList.add("active");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        menuPanel.classList.remove("active");
+      });
+    </script>
+      <div class="image-section">
+        <img
+          src="/assets/images/m.jpg"
+          alt="Ahasna Charumee"
+          class="profile-image"
+        />
+      </div>
     <section class="container" id="home">
       <div class="text-section">
         <h2>Hello It's Me</h2>
@@ -335,34 +83,33 @@ nav ul li:hover::after {
         <p>Specializing in creating innovative and user-friendly solutions.</p>
 
         <div class="social-icons">
-          <a href="#"
-            ><img
+          <a href="https://www.linkedin.com/in/ahasna-charumee-a97714346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
+
+          ><img
               src="/assets/images/icons8-linkedin-circled-50.png"
               alt="LinkedIn"
           /></a>
-          <a href="#"
-            ><img
+         
+          <a href="https://x.com/AhasnaC?t=EnAEmwqlRUJICeb0LCga7w&s=09" target="_blank"
+
+          ><img
               src="/assets/images/icons8-twitter-50.png"
               alt="Twitter"
               style="height: 35px"
           /></a>
-          <a href="#"
-            ><img src="/assets/images/icons8-github-50.png" alt="GitHub"
+          <a href="https://github.com/AhasnaCharumee" target="_blank"
+          ><img src="/assets/images/icons8-github-50.png" alt="GitHub"
           /></a>
         </div>
 
         <button class="cv-button">Download CV</button>
       </div>
 
-      <div class="image-section">
-        <img
-          src="/assets/images/m.jpg"
-          alt="Ahasna Charumee"
-          class="profile-image"
-        />
-      </div>
+    
     </section>
     <section class="about" id="about">
+      <h1>About Me</h1>
+
       <div class="container">
         <div class="image-section">
           <img
@@ -372,38 +119,18 @@ nav ul li:hover::after {
           />
         </div>
         <div class="info-section">
-          <h1>About Me</h1>
-          <p>
-            <span class="label">Name :</span>
-            <span class="highlight">U.H.Ahasna</span> Charumee
-          </p>
-          <p>
-            <span class="label">Date of Birth :</span>
-            <span class="highlight">May 02, 2003</span>
-          </p>
-          <p>
-            <span class="label">Address :</span> Welipitiya, Weligama, Matara,
-            <span class="highlight">Sri Lanka</span>
-          </p>
-          <p>
-            <span class="label">Email :</span>
-            <a href="mailto:charumeeahasna@gmail.com"
-              >charumeeahasna@gmail.com</a
-            >
-          </p>
-          <p>
-            <span class="label">Phone :</span>
-            <a href="tel:+94783113149" class="highlight">0783113149</a>
-          </p>
-          <p>
-            <span class="label">Education :</span>
-            <span class="highlight"
-              >Student at Institute of Software Engineering</span
-            >
-          </p>
+          <div class="details">
+            <p><span class="label">Name:</span> <span class="highlight">U.H.Ahasna Charumee</span></p>
+            <p><span class="label">Date of Birth:</span> <span class="highlight">May 02, 2003</span></p>
+            <p><span class="label">Address:</span><span class="highlight"> Welipitiya, Weligama, Matara, Sri Lanka</span></p>
+            <p><span class="label">Email:</span> <a href="mailto:charumeeahasna@gmail.com"  class="highlight">charumeeahasna@gmail.com</a></p>
+            <p><span class="label">Phone:</span> <a href="tel:+94783113149" class="highlight">0783113149</a></p>
+            <p><span class="label">Education:</span> <span class="highlight">Student at Institute of Software Engineering</span></p>
+          </div>
         </div>
       </div>
     </section>
+    
     <section class="service" id="service">
       <h1>Our Services</h1>
       <div class="work-list">
@@ -454,7 +181,7 @@ nav ul li:hover::after {
           <div class="overlay">
             <h3>Mvc Architecture</h3>
             <p>The driving school management system implemented using Java</p>
-            <a href="#"
+            <a href="https://github.com/AhasnaCharumee/Driving-School-Management-MVC" target="_blank"
               ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
             /></a>
           </div>
@@ -470,7 +197,7 @@ nav ul li:hover::after {
             <p>
               The driving school management system implemented by using java
             </p>
-            <a href="#"
+            <a href="https://github.com/AhasnaCharumee/Sisira-Learners-Layared" target="_blank"
               ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
             /></a>
           </div>
@@ -487,7 +214,7 @@ nav ul li:hover::after {
               A strategic AI-driven Tic-Tac-Toe game developed using Java.
               Includes the Minimax algorithm for challenging AI gameplay.
             </p>
-            <a href="#"
+            <a href="https://github.com/AhasnaCharumee/Tic-Tac-Toe-Game" target="_blank"
               ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
             /></a>
           </div>
@@ -500,7 +227,7 @@ nav ul li:hover::after {
           <div class="overlay">
             <h3>Portfolio</h3>
             <p>its a my current project implemented by using HTML and CSS</p>
-            <a href="#"
+            <a href="https://github.com/AhasnaCharumee/my-Portfolio" target="_blank"
               ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
             /></a>
           </div>
@@ -513,7 +240,7 @@ nav ul li:hover::after {
           <div class="overlay">
             <h3>Endemic Birds in Sri Lanka</h3>
             <p>its a my current project implemented by using HTML and CSS</p>
-            <a href="#"
+            <a href="https://github.com/AhasnaCharumee/Sri-Lanka-Endemic-Birds-HTML" target="_blank"
               ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
             /></a>
           </div>
@@ -526,14 +253,14 @@ nav ul li:hover::after {
               This is Student management programming course work using java
               ,simple project
             </p>
-            <a href="#"
+            <a href="https://github.com/AhasnaCharumee/course-work-PRF" target="_blank"
               ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
             /></a>
           </div>
         </div>
       </div>
     </section>
-    <section>
+    <section id="contact">
       <h1>Contact Me</h1>
       <div class="contact-container">
         <form>
@@ -557,21 +284,21 @@ nav ul li:hover::after {
         <div class="footer-left">
           <h1>About</h1>
 
-          <p>
+          <h5>
             Feel free to explore <br />
             my projects <br />and reach out if you want to collaborate!
-          </p>
+          </h5>
 
           <div class="social-icons">
-            <a href="#"
+            <a href="https://x.com/AhasnaC?t=EnAEmwqlRUJICeb0LCga7w&s=09" target="_blank"
               ><img
                 src="/assets/images/icons8-linkedin-circled-50.png"
                 alt="twitter"
             /></a>
-            <a href="#"
+            <a href="https://www.linkedin.com/in/ahasna-charumee-a97714346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
               ><img src="/assets/images/icons8-twitter-50.png" alt="Instagram"
             /></a>
-            <a href="#"
+            <a href="https://github.com/AhasnaCharumee" target="_blank"
               ><img src="/assets/images/icons8-github-50.png" alt="facebok"
             /></a>
           </div>
@@ -584,7 +311,7 @@ nav ul li:hover::after {
               alt="arrow"
               style="height: 16px; width: 16px"
             />
-            Home
+          <a href="#home">Home</a>
           </p>
           <p>
             <img
@@ -592,16 +319,7 @@ nav ul li:hover::after {
               alt="arrow"
               style="height: 16px; width: 16px"
             />
-            About
-          </p>
-
-          <p>
-            <img
-              src="/assets/images/icons8-arrow-32.png"
-              alt="arrow"
-              style="height: 16px; width: 16px"
-            />
-            Service
+            <a href="#about">About</a>
           </p>
 
           <p>
@@ -610,7 +328,7 @@ nav ul li:hover::after {
               alt="arrow"
               style="height: 16px; width: 16px"
             />
-            Project
+            <a href="#service">Service</a>
           </p>
 
           <p>
@@ -619,11 +337,20 @@ nav ul li:hover::after {
               alt="arrow"
               style="height: 16px; width: 16px"
             />
-            Contact
+            <a href="#project">Project</a>
+          </p>
+
+          <p>
+            <img
+              src="/assets/images/icons8-arrow-32.png"
+              alt="arrow"
+              style="height: 16px; width: 16px"
+            />
+            <a href="#contact">Contact</a>
           </p>
         </div>
 
-        <div class="footer-section contact">
+        <div class="footer-section-contact">
           <h1>HAVE A <br />QUESTIONS?</h1>
           <br />
 
@@ -635,7 +362,6 @@ nav ul li:hover::after {
             />
             First Lane, Welipitiya, Sri Lanka.
           </p>
-          <br />
 
           <p>
             <img
@@ -645,7 +371,6 @@ nav ul li:hover::after {
             />
             +94 783113149
           </p>
-          <br />
 
           <p>
             <img
@@ -658,7 +383,7 @@ nav ul li:hover::after {
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 Ahasna Charumee. All rights reserved.</p>
+        <h3>© 2025 Ahasna Charumee. All rights reserved.</h3>
       </div>
     </footer>
   </body>

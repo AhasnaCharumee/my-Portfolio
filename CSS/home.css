@@ -8,7 +8,7 @@ body {
   align-items: center;
 }
 * {
-  margin: 20;
+  margin: 10;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -78,17 +78,20 @@ nav ul li:hover::after {
 .container {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 67px;
   padding: 120px;
-  /* justify-content: space-around;
-  margin-top: 56px; */
+  
 }
 .text-section {
   max-width: 500px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -639px;
+  margin-left:10px;
 }
-.text-section {
-  max-width: 500px;
-}
+
 .text-animation {
   font-size: 34px;
   font-weight: 700;
@@ -107,7 +110,6 @@ nav ul li:hover::after {
 
 .text-animation span::after {
   content: "";
-  background-color: magenta;
   position: absolute;
   width: calc(100% + 8px);
   height: 100%;
@@ -225,6 +227,8 @@ nav ul li:hover::after {
   position: relative;
 }
 .profile-image {
+  margin-top: 169px;
+  margin-left: 651px;
   width: 400px;
   border-radius: 50%;
   box-shadow: 0 0 25px #ff04ff;
@@ -265,5 +269,193 @@ nav ul li:hover::after {
   transition: background-color 0.3sease, transform 0.3sease;
 }
 
+#burger {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+.menu-panel {
+  background-color: black;
+  color: white;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: right 0.5s ease-in-out;
+}
+.menu-panel ul {
+  list-style: none;
+  padding: 50px 20px;
+}
+.menu-panel ul li {
+  margin-bottom: 16px;
+}
+.menu-panel ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+}
+.close-btn {
+  background-color: transparent;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+@media only screen and (max-width: 320px) {
+ 
+}
 
 
+@media only screen and (max-width: 375px) {
+  
+}
+
+
+@media only screen and (max-width: 425px) {
+  #burger {
+    display: block;
+    margin-right:350px;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .image-section {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image {
+    width: 250px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .text-section {
+    max-width: 100%;
+    padding: 0px;
+    margin-left:200px;
+  } .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left:-500px;
+    
+
+  }
+
+  .container
+  .text-section{
+    margin-left:-100px;
+  }
+.container
+  .text-section h1{
+    font-size:30px;
+  }
+  .container
+  .text-section h3{
+    font-size:25px;
+  }
+  .container
+  .text-section p{
+    font-size:20px
+  }
+  .container
+  .text-section
+  .social-icons{
+    font-size:10px;
+  }
+  .container
+  .text-section
+  .cv-button{
+    font-size:15px;
+  }
+  .image-section {
+    order: -1; 
+  }
+
+
+
+  
+}
+@media screen and (max-width: 768px) {
+  .navigation{
+    display:none;
+  }
+.image-section{
+  order:-1;
+  
+}
+    .text-section{
+      margin-top: 33px;
+      margin-left: 80px;
+      max-width:800px;
+      font-size:17px;
+    }
+.text-section p{
+  font-size:25px
+}
+.text-section h1{
+  font-size:50px;
+}
+ .text-section h3{
+  font-size:40px;
+}
+.profile-image{
+  margin-left: 187px;
+  margin-top: 625px;
+  max-width: 500px;
+}
+
+  .container {
+      flex-direction: row;
+      padding: 30px;
+  }
+ 
+   .cv-button{
+     font-size:25px;
+   }
+   
+  }
+  
+  
+  
+
+@media screen and (max-width: 1024px) {
+  .container {
+      flex-direction: row;
+      padding: 40px;
+  }
+
+  
+}
+
+
+@media screen and (max-width: 1440px) {
+  .container {
+      flex-direction: row;
+      padding: 50px;
+  }
+
+  
+ 
+}

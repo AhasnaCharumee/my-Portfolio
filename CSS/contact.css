@@ -3,21 +3,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px; /* Reduced margin */
+  margin: 10px;
 }
 
 .input-box {
-  margin-bottom: 20px; /* Reduced bottom margin */
+  margin-bottom: 20px;
 }
 
 .input-box input,
 .input-box textarea {
   width: 100%;
+  
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  margin: 5px 0; /* Reduced margin between input fields */
+  
+  margin: 5px 0; 
 }
 
 form {
@@ -35,7 +37,7 @@ form {
 .row {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0; /* Reduced space between rows */
+  margin: 10px 0; 
   width: 100%;
 }
 
@@ -50,11 +52,11 @@ textarea {
 }
 
 .row input {
-  width: 48%; /* Ensures two inputs per row are properly aligned */
+  width: 48%; 
 }
 
 textarea {
-  height: 150px; /* Reduced height of textarea */
+  height: 250px;
 }
 
 .contact-button {
@@ -71,4 +73,122 @@ textarea {
 .contact-button:hover {
   background: magenta;
   color: white;
+}
+@media only screen and (max-width: 320px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+
+ 
+form {
+  width: 90%;
+}
+
+.row {
+  flex-direction: column;
+}
+
+.row input {
+  width: 100%;
+}
+
+}
+
+
+@media only screen and (max-width: 375px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+
+
+ 
+
+form {
+  width: 90%;
+}
+
+.row {
+  flex-direction: column;
+}
+
+.row input {
+  width: 100%;
+}
+
+}
+
+
+@media only screen and (max-width: 425px) {
+  #burger {
+    display: block;
+  }
+  .navigation {
+    display: none;
+  }
+  
+  .menu-panel.active {
+    right: 0;
+  }
+  .logo img {
+      width: 100%;
+  }
+
+form {
+  width: 90%;
+}
+
+.row {
+  flex-direction: column;
+}
+
+.row input {
+  width: 100%;
+}
+
+}
+@media screen and (max-width: 768px) {
+  .navigation{
+      display:none;
+    }
+
+ 
+  
+
+  }
+  
+  
+  
+
+@media screen and (max-width: 1024px) {
+ 
+
+ 
+
+}
+
+
+@media screen and (max-width: 1440px) {
+ 
+
+
 }
