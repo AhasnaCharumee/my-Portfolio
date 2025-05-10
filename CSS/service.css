@@ -1,27 +1,22 @@
 .work-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-margin-left:150px;
+  display:flex ;
+  gap: 40px;
 }
 
 .work {
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-}
+  max-width: 20%;
+  margin-left: 10%;}
 
 .work img {
-  width: 60%; 
-  height: auto; 
   border-radius: 10px;
-  display: block;
   transition: transform 0.5s;
 }
 
 .layer {
-  width: 60%;
-  height: 0%;
+  width: 40%;
   background: linear-gradient(to right, #e327e3, #ffc0cb);
   border-radius: 10px;
   position: absolute;
@@ -32,15 +27,18 @@ margin-left:150px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 40px;
   text-align: center;
   transition: height 0.5s;
   color: black;
+  display:none;
 }
 
-.layer h3 {
-  font-weight: 8500;
-  margin-bottom: 20px;
+.layer h3{
+  font-size:25px ;
+}
+.layer h4 {
+  font-size: 15px;
+ 
 }
 
 .layer a {
@@ -50,8 +48,7 @@ margin-left:150px;
   font-size: 18px;
   line-height: 60px;
   background: #382020;
-  width: 60%;
-  height: 60;
+  width: 40%;
   border-radius: 50%;
   text-align: center;
 }
@@ -62,8 +59,23 @@ margin-left:150px;
 }
 
 .work:hover .layer {
-  height: 100%;
   border-radius: 10px;
+  width: auto;
+  background: linear-gradient(to right, #e327e3, #ffc0cb);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  transition: height 0.5s;
+  color: black;
+  font-size: 4px
+  ;
 }
 
 .projects form .btn {
@@ -125,6 +137,7 @@ h1 {
 .work-list {
   grid-template-columns: 1fr;
   margin-left: 0;
+  
 }
 
 .work img {
@@ -132,7 +145,7 @@ h1 {
 }
 
 .layer {
-  padding: 0 20px;
+  
 }
 
 h1 {
@@ -156,9 +169,8 @@ h1 {
   }
 
   .work-list {
-    grid-template-columns: repeat(1, 1fr); 
-    margin-left: 0; 
-    gap: 20px;
+  padding-right:52px;
+    gap: 50px;
   }
 
   .work img {
@@ -166,7 +178,7 @@ h1 {
   }
 
   .layer {
-    padding: 0 30px;
+  
   }
 
   h1 {
@@ -182,7 +194,7 @@ h1 {
 
   .work-list {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 0; 
+    margin-right: 10%; 
     gap: 20px;
   }
   
@@ -197,6 +209,8 @@ h1 {
  
   .layer {
     width: 100%;
+    height:auto;
+
   }
 }
   
@@ -207,8 +221,9 @@ h1 {
  
  
   .work-list {
-    grid-template-columns: repeat(3, 1fr);
+    gap: -178px;
     margin-left: 0;
+    max-width: 157%;
   }
 
   .work img {
@@ -216,7 +231,7 @@ h1 {
   }
 
   .layer {
-    padding: 0 40px;
+height:auto;
   }
 
   h1 {
@@ -230,16 +245,24 @@ h1 {
 
   
   .work-list {
-    grid-template-columns: repeat(2, 1fr);
     margin-left: 50px;
-  }
+    display:flex;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+   } 
 
   .work img {
-    width: 100%;
+    width: 80%;
   }
 
   .layer {
-    padding: 0 40px;
+  
+        width: auto;
+    height:auto;
+
+
   }
 
   h1 {

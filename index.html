@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Portfolio</title>
     <link
     rel="stylesheet"
@@ -11,6 +12,7 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/CSS/home.css" />
     <link rel="stylesheet" href="/CSS/about.css" />
@@ -18,6 +20,9 @@
     <link rel="stylesheet" href="/CSS/project.css" />
     <link rel="stylesheet" href="/CSS/contact.css" />
     <link rel="stylesheet" href="/CSS/footer.css" />
+    <link rel="stylesheet" href="/CSS/skill.css" />
+    <link rel="stylesheet" href="/CSS/language.css" />
+    <link rel="stylesheet" href="/CSS/assignment.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,39 +38,48 @@
     <header class="header">
       <a href="#home" class="logo">Meet me</a>
 
-      <nav class="navigation">
+      <nav class="navigation" style="display: block; margin-top: 3%;">
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#service">Services</a></li>
           <li><a href="#project">Projects</a></li>
+          <li><a href="#assignments">Assignments</a></li>
+          <li><a href="#skills">Skill</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
       <i class="fa fa-bars burger" id="burger" aria-hidden="true"></i>
-      <nav class="menu-panel" id="menu-panel-id">
+
+      <nav class="menu-panel" id="menu-panel-id" >
         <button class="close-btn" id="btn-close">&times;</button>
-        <ul>
-          <li><a href="#home">Home</a></li>
+        <ul style="background-color: gray;">
+          <img src="/assets/images/Group 5.png" alt="Logo" class="logo" style="max-width: 50%; margin-bottom: 22%;" />
+
+          <li style="background-color: #ff00ff;"><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#service">Services</a></li>
           <li><a href="#project">Projects</a></li>
+          <li><a href="#assignments">Assignments</a></li>
+          <li><a href="#skills">Skill</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
+
     <script>
-      const burger = document.getElementById("burger");
-      const menuPanel = document.getElementById("menu-panel-id");
-      const closeBtn = document.getElementById("btn-close");
+  const burger = document.getElementById("burger");
+const menuPanel = document.getElementById("menu-panel-id");
+const closeBtn = document.getElementById("btn-close");
 
-      burger.addEventListener("click", () => {
-        menuPanel.classList.add("active");
-      });
+burger.addEventListener("click", () => {
+  menuPanel.classList.add("active");
+});
 
-      closeBtn.addEventListener("click", () => {
-        menuPanel.classList.remove("active");
-      });
+closeBtn.addEventListener("click", () => {
+  menuPanel.classList.remove("active");
+});
     </script>
       <div class="image-section">
         <img
@@ -76,11 +90,13 @@
       </div>
     <section class="container" id="home">
       <div class="text-section">
-        <h2>Hello It's Me</h2>
-        <h1>Ahasna Charumee</h1>
+        <h2 class="letter">Hello It's Me</h2>
+        <h1 class="letter">Ahasna Charumee</h1>
         <h3 class="text-animation">I'm a <span></span></h3>
 
-        <p>Specializing in creating innovative and user-friendly solutions.</p>
+        <p style="  animation: bottomIn 1.4s ease-in-out forwards;
+        opacity: 0;
+        animation-delay: 0.4s;">Specializing in creating innovative and user-friendly solutions.</p>
 
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/ahasna-charumee-a97714346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"
@@ -107,7 +123,7 @@
 
     
     </section>
-    <section class="about" id="about">
+    <section class="about" id="about" >
       <h1>About Me</h1>
 
       <div class="container">
@@ -131,15 +147,15 @@
       </div>
     </section>
     
-    <section class="service" id="service">
-      <h1>Our Services</h1>
-      <div class="work-list">
-        <div class="work">
+    <section class="service" id="service" >
+      <h1 style="margin-top: 5%;">Our Services</h1>
+      <div class="work-list" style="padding-top: 5%;">
+        <div class="work" >
           <img src="/assets/images/critical-thinking_15577835.gif" />
           <div class="layer">
-            <h3>Acedemic Project <br />development</h3>
+            <h3 class="h3"  style="font-size: 23px;">Acedemic Project <br />development</h3>
 
-            <h4>
+            <h4 style="font-size: 15px;">
               Expertise in designing and implementing academic-level software
               systems using Java, MySQL, and JavaFX
             </h4>
@@ -171,8 +187,8 @@
       </div>
     </section>
     <section id="project">
-      <h1>Our Projects</h1>
-      <div class="project-container">
+      <h1 style="padding-top: 5%;">Our Projects</h1>
+      <div class="project-container" style="padding-top: 5%;">
         <div class="project-card">
           <img
             src="https://media.istockphoto.com/id/1047259374/photo/programming-source-code-abstract-background.jpg?s=612x612&w=0&k=20&c=07DAFiujCb58Zgu5ZArLprHiSKew5pCGqbTnop9GclA="
@@ -240,7 +256,9 @@
           <div class="overlay">
             <h3>Endemic Birds in Sri Lanka</h3>
             <p>its a my current project implemented by using HTML and CSS</p>
-            <a href="https://github.com/AhasnaCharumee/Sri-Lanka-Endemic-Birds-HTML" target="_blank"
+            <a href="https://endemic-birds.web.app
+
+            " target="_blank"
               ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
             /></a>
           </div>
@@ -258,10 +276,473 @@
             /></a>
           </div>
         </div>
+        </div>
+        <div class="project-container" style="margin-top: 1.5%;">
+
+        <div class="project-card">
+          <img src="/assets/images/Screenshot 2025-04-22 153155.png" alt="Project 3" />
+          <div class="overlay">
+            <h3>Hotel AHASRA</h3>
+            <p>
+              This is hotel web site using HTML and CSS,bootstrap simple project
+            </p>
+            <a href="https://hotel-ahasra.web.app" target="_blank"
+              ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
+            /></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="/assets/images/Screenshot 2025-03-31 211218.png" alt="Project 3" />
+          <div class="overlay">
+            <h3>Movie Founder</h3>
+            <p>
+              Created a Movie Search App using the OMDb API
+             Displaying movie data like: title, poster, plot, and writer            </p>
+            <a href="https://github.com/AhasnaCharumee/SKYREK-JS-DAY" target="_blank"
+              ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
+            /></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="/assets/images/Screenshot 2025-04-22 161809.png" alt="Project 3" />
+          <div class="overlay">
+            <h3>Memory Match Game</h3>
+            <p>
+              The Memory Match Game is a card-matching game where players flip over cards two at a time to find matching pairs. The objective is to match all card pairs using the least number of moves and time.            </p>
+            <a href="https://memory-match-aa164.web.app" target="_blank"
+              ><img src="/assets/images/icons8-arrow-50.png" alt="see more"
+            /></a>
+          </div>
+        </div>
       </div>
+    </div>
     </section>
+   
+    <section class="assignments" id="assignments">
+      <section class="assignments-main">
+        <h1 style="padding-top: 5%;">Assignments</h1>
+
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/Assignment1.png" alt="assignment1">
+            </div>
+            <h1>Assignment 1</h1>
+          </div>
+          <div class="right-section">
+            <h1>Positions</h1>
+            <h2>Using basic knowledge about css positions designing a colorful art</h2>
+            <div class="sec-button">
+              <a href="https://assignment-03-146da.web.app/cases/case-1.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as2.png" alt="assignment2">
+            </div>
+            <h1>Assignment 2</h1>
+          </div>
+          <div class="right-section">
+            <h1>Positions</h1>
+            <h2>Using basic knowledge about css positions designing a simple web page</h2>
+            <div class="sec-button">
+              <a href="https://assignment-03-146da.web.app/cases/case-2.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as3.png" alt="assignment3">
+            </div>
+            <h1>Assignment 3</h1>
+          </div>
+          <div class="right-section">
+            <h1>Positions</h1>
+            <h2>Using basic knowledge about css positions designing a moving circle effect</h2>
+            <div class="sec-button">
+              <a href="https://assignment-03-146da.web.app/cases/case-3.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as4.png" alt="assignment4">
+            </div>
+            <h1>Assignment 4</h1>
+          </div>
+          <div class="right-section">
+            <h1>Positions</h1>
+            <h2>Using positions  designing a scrolling sticky effect</h2>
+            <div class="sec-button">
+              <a href="https://assignment-03-146da.web.app/cases/case-4.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as5.png" alt="assignment5">
+            </div>
+            <h1>Assignment 5</h1>
+          </div>
+          <div class="right-section">
+            <h1>Positions</h1>
+            <h2>Using basic knowledge about grid layout designing a collage picture board</h2>
+            <div class="sec-button">
+              <a href="https://assignment-03-146da.web.app/cases/case-5.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as6.png" alt="assignment6">
+            </div>
+            <h1>Assignment 6</h1>
+          </div>
+          <div class="right-section">
+            <h1>Positions</h1>
+            <h2>Using basic knowledge about grid layout designing a complex collage picture board</h2>
+            <div class="sec-button">
+              <a href="https://assignment-03-146da.web.app/cases/case-6.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as7.png" alt="assignment7">
+            </div>
+            <h1>Assignment 7</h1>
+          </div>
+          <div class="right-section">
+            <h1>Transitions</h1>
+            <h2>Using position & transition designing a element hide and peek effect</h2>
+            <div class="sec-button">
+              <a href="http://192.168.5.21:8080/pages/case-1.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as8.png" alt="assignment8">
+            </div>
+            <h1>Assignment 8</h1>
+          </div>
+          <div class="right-section">
+            <h1>Transitions</h1>
+            <h2>Using flex, border property & rotate designing a simple border rotating effect</h2>
+            <div class="sec-button">
+              <a href="http://192.168.5.21:8080/pages/case-2.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as9.png" alt="assignment9">
+            </div>
+            <h1>Assignment 9</h1>
+          </div>
+          <div class="right-section">
+            <h1>Transitions</h1>
+            <h2>Using flex, positions & transitions designing a hover delete effect</h2>
+            <div class="sec-button">
+              <a href="http://192.168.5.21:8080/pages/case-3.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as10.png" alt="assignment10">
+            </div>
+            <h1>Assignment 10</h1>
+          </div>
+          <div class="right-section">
+            <h1>Transitions</h1>
+            <h2>Using knowledge about css positions & transition effects designing simmple rotating circle</h2>
+            <div class="sec-button">
+              <a href="http://192.168.5.21:8080/pages/case-4.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as11.png" alt="assignment11">
+            </div>
+            <h1>Assignment 11</h1>
+          </div>
+          <div class="right-section">
+            <h1>Animation</h1>
+            <h2>Using knowledge about css positions & animation effects designing simmple rotating squre</h2>
+            <div class="sec-button">
+              <a href="http://192.168.5.21:8080/pages/case-5.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as12.png" alt="assignment12">
+            </div>
+            <h1>Assignment 12</h1>
+          </div>
+          <div class="right-section">
+            <h1>Animation</h1>
+            <h2>Using knowledge about css positions & animation effects designing a moon animation</h2>
+            <div class="sec-button">
+              <a href="http://192.168.5.21:8080/pages/case-6.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as13.png" alt="assignment13">
+            </div>
+            <h1>Assignment 13</h1>
+          </div>
+          <div class="right-section">
+            <h1>Animation</h1>
+            <h2>Using knowledge about css positions & animation effects designing a image slider</h2>
+            <div class="sec-button">
+              <a href="https://simple-calculate-1b60f.web.app/" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as14.png" alt="assignment14">
+            </div>
+            <h1>Assignment 14</h1>
+          </div>
+          <div class="right-section">
+            <h1>Js Queue</h1>
+            <p> This is the graphical view of a Que Process Using HTML, CSS and JS.
+
+              Created a suitable view display a Que.
+              Animated it Using HTML, CSS and JS according to the process of a Que.
+              Added Stop and Start button to start and stop the Que.</p>
+            <div class="sec-button">
+              <a href="https://it-assignment-07-343b2.web.app/pages/assignment-7-1/js-que.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as15.png" alt="assignment15">
+            </div>
+            <h1>Assignment 15</h1>
+          </div>
+          <div class="right-section">
+            <h1>Java Script Queue</h1>
+            <p>This is the graphical view of a Que Process Using HTML, CSS and JS.
+
+              Created a suitable view display a Que.
+              Animated it Using HTML, CSS and JS according to the process of a Que.
+              Added Stop and Start button to start and stop the Que.</p>
+            <div class="sec-button">
+              <a href="https://it-assignment-07-343b2.web.app/pages/assignment-7-1/java-script-que.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as16.png" alt="assignment15">
+            </div>
+            <h1>Assignment 16</h1>
+          </div>
+          <div class="right-section">
+            <h1>Knight Rider</h1>
+            <p>This is a graphical view of the famous TV Series Knight Rider’s theme light system using HTML, CSS and JS.
+
+              Added a function to start and stop the the JS animation.
+              represented the fading effects of lights in a proper way.
+              Add the related audio to the above animation.
+             </p>
+            <div class="sec-button">
+              <a href="https://it-assignment-07-343b2.web.app/pages/assignment-7-2/knight-Rider.html" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        <section class="block">
+          <div class="left-section">
+            <div class="img-container">
+              <img src="/assets/images/as17.png" alt="assignment17">
+            </div>
+            <h1>Assignment 17</h1>
+          </div>
+          <div class="right-section">
+            <h1>Invoice Management System </h1>
+            <p> a simple browser-based application to manage invoices using HTML, CSS, and JavaScript.
+
+            </pp>
+            <div class="sec-button">
+              <a href="https://sell-x.web.app/" target="_blank"><button>View More</button></a>
+            </div>
+          </div>
+        </section>
+        
+      </section>
+    </section>
+
+
+    <section id="skills" class="bg-light py-5">
+      <h1 style=" margin-top: 40%;"> Skills</h1>
+
+      <div class="container">
+          <div class="skill-container">
+  
+            <div class="skill-card java">
+              <span class="skill">Java</span>
+              <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%;background-color:#ff00ff ;"></div>
+              </div>
+              <span class="percentage">65%</span>
+            </div>
+  
+            <div class="skill-card mysql">
+              <span class="skill">My SQL</span>
+              <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%;background-color:#ff00ff ;"></div>
+              </div>
+              <span class="percentage">60%</span>
+            </div>
+  
+            <div class="skill-card java">
+              <span class="skill">Java FX</span>
+              <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%; background-color:#ff00ff ;"></div>
+              </div>
+              <span class="percentage">90%</span>
+            </div>
+  
+            <div class="skill-card java-script">
+              <span class="skill">Java Script</span>
+              <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%;background-color:#ff00ff ;"></div>
+              </div>
+              <span class="percentage">45%</span>
+            </div>
+  
+            <div class="skill-card html">
+              <span class="skill">HTML</span>
+              <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%;background-color:#ff00ff ;"></div>
+              </div>
+              <span class="percentage">85%</span>
+            </div>
+  
+            <div class="skill-card css">
+              <span class="skill">CSS</span>
+              <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%;background-color:#ff00ff ;"></div>
+              </div>
+              <span class="percentage">75%</span>
+            </div>
+  
+          </div>
+      </div>
+      </section>
+      <h1>LEARNED LANGUAGES AND TOOLS      </h1>
+      <br>
+      <br>
+      <br>      <br>      <br>      <br>
+      <div class="skill-group">
+
+        <div class="skill-item" >
+            <img src="/assets/images/icons8-intellij-idea-144.png" height="50" width="50"
+                alt="IntelliJ IDEA">
+            <label>INTELLIJ IDEA</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-java-144.png" height="50" width="50" alt="Java">
+            <label>JAVA</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-mysql-100.png" height="50" width="50" alt="MySQL">
+            <label>MySQL</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-apache-netbeans-144.png" height="50" width="50" alt="NetBeans">
+            <label>NETBEANS</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-linux-96.png" height="50" width="50" alt="Linux">
+            <label>LINUX</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-figma-48.png" height="50" width="50" alt="Figma">
+            <label>FIGMA</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-scene-builder-128.png" height="50" width="50"
+                alt="Scene Builder">
+            <label>SCENE BUILDER</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-vs-code-144.png" height="50" width="50" alt="VS Code">
+            <label>VS CODE</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-html-96.png" height="50" width="50" alt="HTML">
+            <label>HTML</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-css-96.png" height="50" width="50" alt="CSS">
+            <label>CSS</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-firebase-96.png" height="50" width="50" alt="Firebase">
+            <label>FIREBASE</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/Hibernate.png" height="50" width="50" alt="Hibernate">
+            <label>HIBERNATE</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-bootstrap-96.png" height="50" width="50" alt="Bootstrap">
+            <label>BOOTSTRAP</label>
+        </div>
+    </div>
+
+    <div class="skill-group">
+        <h3 class="skills2"><strong>LEARNING LANGUAGES AND TOOLS</strong></h3>
+
+        <div class="skill-item">
+            <img src="/assets/images/icons8-mongo-db-96.png" height="50" width="50" alt="MongoDB">
+            <label>MONGODB</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-git-96.png" height="50" width="50" alt="Git">
+            <label>GIT</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-javascript-96.png" height="50" width="50" alt="JavaScript">
+            <label>JAVASCRIPT</label>
+        </div>
+        <div class="skill-item">
+            <img src="/assets/images/icons8-nodejs-96.png" height="50" width="50" alt="Node.js">
+            <label>NODE.JS</label>
+        </div>
+        <div class="skill-item">
+          <img src="/assets/images/react-removebg-preview.png" height="50" width="50" alt="Node.js">
+          <label>React</label>
+      </div>
+    </div>
+
     <section id="contact">
-      <h1>Contact Me</h1>
+      <h1 style="padding-top: 5%;">Contact Me</h1>
       <div class="contact-container">
         <form>
           <div class="row">
@@ -305,7 +786,7 @@
         </div>
         <div class="footer-center">
           <h1>Links</h1>
-          <p>
+          <p style="text-decoration: none;">
             <img
               src="/assets/images/icons8-arrow-32.png"
               alt="arrow"
@@ -338,6 +819,22 @@
               style="height: 16px; width: 16px"
             />
             <a href="#project">Project</a>
+          </p>
+          <p>
+            <img
+              src="/assets/images/icons8-arrow-32.png"
+              alt="arrow"
+              style="height: 16px; width: 16px"
+            />
+            <a href="#assignments">Assignments</a>
+          </p>
+          <p>
+            <img
+              src="/assets/images/icons8-arrow-32.png"
+              alt="arrow"
+              style="height: 16px; width: 16px"
+            />
+            <a href="#skills">Skills</a>  
           </p>
 
           <p>

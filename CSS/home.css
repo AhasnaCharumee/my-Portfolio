@@ -28,6 +28,10 @@ header {
   background: rgba(0, 0, 0, 0.7);
   align-items: center;
   padding:1rem 9%;;
+  animation: topIn 1.4s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+  position: fixed;
 }
 .header .logo {
   text-decoration: none;
@@ -90,12 +94,18 @@ nav ul li:hover::after {
   flex-direction: column;
   margin-top: -639px;
   margin-left:10px;
+  animation: topIn 1.4s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 
 .text-animation {
   font-size: 34px;
   font-weight: 700;
   min-width: 280px;
+  animation: topIn 1.4s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 
 .text-animation span {
@@ -118,6 +128,40 @@ nav ul li:hover::after {
   animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 
 }
+
+@keyframes bottomIn {
+  from {
+    transform: translateY(250px) ;
+  }
+  to {
+    transform: translateY(0) ;
+    opacity: 1;
+  }
+}
+
+@keyframes topIn {
+  from {
+    transform: translateY(-100px) ;
+  }
+  to {
+    transform: translateY(0) ;
+    opacity: 1;
+  }
+}
+
+@keyframes imgIn {
+  from {
+    transform: translateY(250px) scale(0.8) ;
+  }
+  to {
+    transform: translateY(0) scale(1) ;
+    opacity: 1;
+  }
+}
+
+
+
+
 
 
 
@@ -176,6 +220,9 @@ nav ul li:hover::after {
 
 .social-icons {
   margin-top: 10px;
+  animation: bottomIn 1.4s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
 }
 .social-icons a img {
   width: 71px;
@@ -225,6 +272,8 @@ nav ul li:hover::after {
 }
 .image-section {
   position: relative;
+  animation: imgIn 1.4s ease-in-out forwards;
+
 }
 .profile-image {
   margin-top: 169px;
@@ -239,6 +288,11 @@ nav ul li:hover::after {
   box-shadow: 0 0 50px, 0 0 100px;
   color: #ff04ff;
 }
+.letter{
+  animation: bottomIn 1.4s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
 .cv-button {
   margin-top: 42px;
   padding: 10px 20px;
@@ -250,6 +304,9 @@ nav ul li:hover::after {
   cursor: pointer;
   border-radius: 8px;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: bottomIn 1.4s ease-in-out forwards;
+  opacity: 0;
+  animation-delay: 0.5s;
 }
 .cv-button:hover {
   background-color: #d400d4; 
@@ -274,9 +331,9 @@ nav ul li:hover::after {
   font-size: 1.2rem;
   cursor: pointer;
   display: none;
+  
 }
 .menu-panel {
-  background-color: black;
   color: white;
   height: 100%;
   width: 250px;
@@ -290,12 +347,14 @@ nav ul li:hover::after {
   padding: 50px 20px;
 }
 .menu-panel ul li {
-  margin-bottom: 16px;
+  margin-bottom: 30px;
+  background-color: #ff00ff;
 }
 .menu-panel ul li a {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
+  display: none;
 }
 .close-btn {
   background-color: transparent;
@@ -305,28 +364,79 @@ nav ul li:hover::after {
   position: absolute;
   top: 10px;
   right: 20px;
+  display:none;
 }
 @media only screen and (max-width: 320px) {
- 
+  #burger {
+    display: block; /* Ensure the burger button is visible */
+    font-size: 2rem; /* Adjust size if needed */
+    margin-right: 20px; /* Adjust positioning */
+  }
+
+  .navigation {
+    display: none; /* Hide the navigation menu */
+  }
+
+  .menu-panel {
+    display: block; /* Ensure the menu panel is ready to be toggled */
+  }
+
+  .menu-panel.active {
+    right: 0; /* Show the menu panel when active */
+  }
 }
 
 
 @media only screen and (max-width: 375px) {
-  
+  #burger {
+    display: block; /* Ensure the burger button is visible */
+    font-size: 2rem; /* Adjust size if needed */
+    margin-left: -50%; /* Adjust positioning */
+  }
+
+  .navigation {
+    display: none; /* Hide the navigation menu */
+  }
+
+  .menu-panel {
+    display: block; /* Ensure the menu panel is ready to be toggled */
+  }
+
+  .menu-panel.active {
+    right: 0; /* Show the menu panel when active */
+  }
+  .profile-image {
+    margin: 0 auto;
+    width: 200px;
+  }
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  header {
+    padding: 1rem 5%; /* reduce from 9% */
+  }
 }
 
 
 @media only screen and (max-width: 425px) {
   #burger {
-    display: block;
-    margin-right:350px;
+    display: block; /* Ensure the burger button is visible */
+    font-size: 2rem; /* Adjust size if needed */
+  margin-right:50%;
   }
+
   .navigation {
-    display: none;
+    display: none; /* Hide the navigation menu */
   }
-  
+
+  .menu-panel {
+    display: block; /* Ensure the menu panel is ready to be toggled */
+  }
+
   .menu-panel.active {
-    right: 0;
+    right: 0; /* Show the menu panel when active */
+    margin-right:42%;
   }
   .logo img {
       width: 100%;
@@ -335,37 +445,34 @@ nav ul li:hover::after {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
-    padding: 20px;
   }
 
   .image-section {
     margin: 0;
     display: flex;
     justify-content: center;
+    margin-right: 20%;
+
   }
 
   .profile-image {
     width: 250px;
-    margin-left: 0;
-    margin-top: 0;
   }
 
   .text-section {
     max-width: 100%;
     padding: 0px;
-    margin-left:200px;
   } .container {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-left:-500px;
     
 
   }
 
   .container
   .text-section{
-    margin-left:-100px;
+    margin-left:-30%;
   }
 .container
   .text-section h1{
@@ -398,8 +505,33 @@ nav ul li:hover::after {
   
 }
 @media screen and (max-width: 768px) {
-  .navigation{
-    display:none;
+  #burger {
+    display: block; /* Ensure the burger button is visible */
+    font-size: 2rem; /* Adjust size if needed */
+  }
+nav ul {
+  display:none;
+}
+.menu-panel ul li a{
+  display: block;
+  color: white;
+}
+.menu-panel ul {
+  display: block;
+}
+.close-btn{
+  display: block;
+}
+  .navigation {
+    display: none; /* Hide the navigation menu */
+  }
+
+  .menu-panel {
+    display: block; /* Ensure the menu panel is ready to be toggled */
+  }
+
+  .menu-panel.active {
+    right: 0; /* Show the menu panel when active */
   }
 .image-section{
   order:-1;
@@ -408,7 +540,7 @@ nav ul li:hover::after {
     .text-section{
       margin-top: 33px;
       margin-left: 80px;
-      max-width:800px;
+    
       font-size:17px;
     }
 .text-section p{
@@ -421,7 +553,7 @@ nav ul li:hover::after {
   font-size:40px;
 }
 .profile-image{
-  margin-left: 187px;
+  margin-left: 5%;
   margin-top: 625px;
   max-width: 500px;
 }
@@ -446,7 +578,6 @@ nav ul li:hover::after {
       padding: 40px;
   }
 
-  
 }
 
 
@@ -456,6 +587,8 @@ nav ul li:hover::after {
       padding: 50px;
   }
 
-  
+ .navigation{
+    display:none;
+  }
  
 }

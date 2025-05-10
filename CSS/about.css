@@ -10,9 +10,9 @@
 }
 
 .About-image {
-  margin-left: 150px;
-  width: 350px;
-  height: 350px;
+  margin-left: 80px;
+  width: 450px;
+  height: 450px;
   object-fit: cover;
   border: 5px solid #ff00ff; 
   transition: border 0.3s ease-in-out;
@@ -28,7 +28,7 @@
 
 .container {
   display: flex;
-  gap: 80px; 
+  gap: 50px; 
   align-items: center;
 }
 
@@ -108,7 +108,9 @@ p {
   .info-section h1 {
     font-size: 22px;
   }
-
+.info-section{
+  padding-left: 800px;
+}
   .details {
     font-size: 13px;
   }
@@ -134,17 +136,15 @@ p {
     
     max-width: 500px;
     margin-bottom: -120px;
-    margin-right:455px
+    margin-right:455px;
     
   }
   .container{
     margin-left:60px;
   }
-  .container 
+  .container
   .details{
-    margin-left:-734px;
-    
-    
+    margin-right:5%;
   }
  .container
   .info-section
@@ -161,11 +161,12 @@ p {
 
  .container 
   .details p{
-    font-size:11px;
+    font-size:65%;
   }
 
   .info-section {
     width: 100%;
+    margin-left:-55%;
     
     
     
@@ -191,7 +192,7 @@ p {
 }
 .image-section{
    margin-top: -509px;
-   margin-left: -124px;
+   margin-right: 3%;
 }
 .details{
   margin-top: 350px;
@@ -201,7 +202,6 @@ p {
   
 .About-image{ 
   margin-top: 150px;
-    margin-left:200px;
 }
 
  

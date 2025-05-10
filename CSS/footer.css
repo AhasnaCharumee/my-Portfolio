@@ -196,6 +196,9 @@ footer {
   flex-direction: column;
   text-align: center;
 }
+.footer-bottom h3{
+  font-size: 10px;
+}
 }
 
 
@@ -246,6 +249,9 @@ form {
   {
     font-size:10px;
     
+  }
+  .footer-bottom h3{
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 768px) {

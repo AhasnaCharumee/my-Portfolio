@@ -1,0 +1,41 @@
+#skills { background-color: black !important; margin-top: -30%; }
+#skills-title { color: rgb(255, 0, 255); }
+.skills-section h3 { font-size: 1.5rem; margin-bottom: 15px; }
+.skill-container { display: grid; grid-template-columns: repeat(3, 1fr); margin-left: 10%; }
+.skill-card { width: 15rem; height: 5rem; margin: 1rem; }
+.skill { font-size: 1.5rem; font-family: "Bree Serif", serif; color: rgb(255, 0, 255); }
+.progress { margin-top: 1rem; }
+.percentage { font-weight: 600; color: rgb(255, 0, 255); margin-left: 13rem; }
+@media only screen and (max-width: 320px) {
+  .skill-container { grid-template-columns: repeat(1, 1fr); margin-left: 0px; }
+  .skill-card { width: 100%; margin: 0.5rem 0px; }
+  .skill { font-size: 1rem; }
+  .percentage { margin-left: 0px; text-align: center; }
+}
+@media only screen and (max-width: 375px) {
+  .skill-container { grid-template-columns: repeat(1, 1fr); margin-left: 0px; }
+  .skill-card { width: 100%; margin: 0.5rem 0px; }
+  .skill { font-size: 1.2rem; }
+  .percentage { margin-left: 0px; text-align: center; }
+}
+@media only screen and (max-width: 425px) {
+  .skill-container { grid-template-columns: repeat(2, 1fr); margin-left: 0px; }
+  .skill-card { width: 90%; margin: 0.5rem auto; }
+  .skill { font-size: 1.3rem; }
+  .percentage { margin-left: 0px; text-align: center; }
+}
+@media only screen and (max-width: 768px) {
+  .skill-container { grid-template-columns: repeat(2, 1fr); margin-left: 0px; }
+  .skill-card { width: 90%; margin: 1rem auto; }
+  .skill { font-size: 1.4rem; }
+  .percentage { margin-left: 0px; text-align: center; }
+}
+@media only screen and (max-width: 1024px) {
+  .skill-container { grid-template-columns: repeat(1, 1fr); margin-left: 22%; }
+  .skill-card { width: 161%; margin: 1rem auto 35%; }
+  #skills { margin-left: -20%; }
+  .skill { font-size: 1.5rem; }
+  .percentage { margin-left: 0px; text-align: center; font-size: 55%; }
+}
+@media only screen and (max-width: 1440px) {
+}
