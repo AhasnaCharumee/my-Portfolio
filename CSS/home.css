@@ -370,7 +370,7 @@ nav ul li:hover::after {
   #burger {
     display: block; /* Ensure the burger button is visible */
     font-size: 2rem; /* Adjust size if needed */
-    margin-right: 20px; /* Adjust positioning */
+    margin-right: 10%; /* Adjust positioning */
   }
 
   .navigation {
@@ -423,7 +423,7 @@ nav ul li:hover::after {
   #burger {
     display: block; /* Ensure the burger button is visible */
     font-size: 2rem; /* Adjust size if needed */
-  margin-right:50%;
+  margin-right:75%;
   }
 
   .navigation {
