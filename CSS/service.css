@@ -11,12 +11,13 @@
   margin-left: 10%;}
 
 .work img {
+  width:100%;
   border-radius: 10px;
   transition: transform 0.5s;
 }
 
 .layer {
-  width: 40%;
+  width: 50%;
   background: linear-gradient(to right, #e327e3, #ffc0cb);
   border-radius: 10px;
   position: absolute;
@@ -60,7 +61,6 @@
 
 .work:hover .layer {
   border-radius: 10px;
-  width: auto;
   background: linear-gradient(to right, #e327e3, #ffc0cb);
   border-radius: 10px;
   position: absolute;
@@ -223,7 +223,6 @@ h1 {
   .work-list {
     gap: -178px;
     margin-left: 0;
-    max-width: 157%;
   }
 
   .work img {
@@ -254,7 +253,7 @@ height:auto;
    } 
 
   .work img {
-    width: 80%;
+    width: 100%;
   }
 
   .layer {
