@@ -436,7 +436,7 @@ nav ul li:hover::after {
 
   .menu-panel.active {
     right: 0; /* Show the menu panel when active */
-    margin-right:42%;
+    margin-right:62%;
   }
   .logo img {
       width: 100%;
