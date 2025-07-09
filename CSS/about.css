@@ -144,7 +144,7 @@ p {
   }
   .container
   .details{
-    margin-left: -235%;
+    margin-left: -36%;
   }
  .container
   .info-section
@@ -232,7 +232,7 @@ p {
 @media screen and (max-width: 1440px) {
   
   .About-image {
-      width: 40%;
+      width: 33%;
       height: auto;
   }
 
