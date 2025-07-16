@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Bootstrap 5.3.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- AOS for Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,152 +18,208 @@
     <style>
         /* Global Styles */
         body {
-            background-color: #0a0a0a;
-            color: #d4d4d4;
+            background: linear-gradient(135deg, #1e1e2f 0%, #2a2a3f 100%);
+            color: #e0e0e0;
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
 
         /* Navbar */
         .navbar {
-            background: #141414;
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(8px);
             padding: 1.2rem 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
         .navbar-brand {
             font-weight: 700;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #ffffff !important;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
         .navbar-brand:hover {
-            color: #a855f7 !important;
+            color: #7c3aed !important;
+            transform: scale(1.05);
         }
         .nav-link {
-            font-weight: 400;
-            color: #a1a1a1 !important;
-            padding: 0.5rem 1rem;
+            font-weight: 500;
+            color: #b0b0b0 !important;
+            padding: 0.5rem 1.2rem;
             transition: color 0.3s ease, transform 0.3s ease;
         }
         .nav-link:hover {
-            color: #a855f7 !important;
-            transform: translateY(-2px);
+            color: #7c3aed !important;
+            transform: translateY(-3px);
         }
         .nav-link.active {
-            color: #a855f7 !important;
-            border-bottom: 2px solid #a855f7;
+            color: #7c3aed !important;
+            border-bottom: 3px solid #7c3aed;
         }
         .navbar-toggler i {
-            color: #a1a1a1;
-            font-size: 1.5rem;
+            color: #b0b0b0;
+            font-size: 1.6rem;
         }
         @media (max-width: 991px) {
             .navbar-collapse {
-                background: #141414;
+                background: rgba(20, 20, 20, 0.95);
+                backdrop-filter: blur(8px);
                 padding: 1rem;
-                border-radius: 8px;
+                border-radius: 12px;
                 margin-top: 0.5rem;
             }
             .nav-link {
                 text-align: center;
+                margin: 0.5rem 0;
             }
         }
 
         /* General Section Styling */
         section {
-            padding: 4rem 0;
-            background-color: #0a0a0a;
+            padding: 5rem 0;
+            background: transparent;
         }
         h1, h2, h3 {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
             color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         p, a {
             font-family: 'Inter', sans-serif;
-            color: #d4d4d4;
+            color: #d0d0d0;
         }
 
         /* Home Section */
         #home {
-            background: linear-gradient(135deg, #141414 0%, #0a0a0a 100%);
+            background: linear-gradient(135deg, #2a2a3f 0%, #1e1e2f 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
         }
         .profile-image {
-            border-radius: 16px;
-            max-width: 80%;
+            border-radius: 20px;
+            max-width: 85%;
             height: auto;
-            border: 2px solid #a855f7;
-            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+            border: 2px solid #7c3aed;
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+            transition: transform 0.5s ease;
+            animation: imgIn 1.5s ease-in-out forwards;
+        }
+        .profile-image:hover {
+            transform: scale(1.05);
         }
         .cv-button {
-            background-color: #a855f7;
+            background: linear-gradient(45deg, #7c3aed, #a855f7);
             color: #ffffff;
             border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
             font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
         }
         .cv-button:hover {
-            background-color: #9333ea;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(168, 85, 247, 0.3);
+            background: linear-gradient(45deg, #6d28d9, #9333ea);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
         }
         .social-icons img {
-            width: 36px;
-            height: 36px;
-            margin: 0 12px;
+            width: 40px;
+            height: 40px;
+            margin: 0 15px;
             transition: transform 0.3s ease, filter 0.3s ease;
-            filter: brightness(70%);
+            filter: brightness(80%);
         }
         .social-icons img:hover {
-            transform: scale(1.15);
+            transform: scale(1.2);
             filter: brightness(100%);
+        }
+        .text-animation {
+            font-size: 2.2rem;
+            font-weight: 700;
+            animation: fadeInUp 1.4s ease-in-out forwards;
+            opacity: 0;
+            animation-delay: 0.2s;
+        }
+        .text-animation span::before {
+            content: 'Web Developer';
+            color: #7c3aed;
+            animation: words 20s infinite;
+        }
+        .text-animation span::after {
+            content: "";
+            position: absolute;
+            width: calc(100% + 8px);
+            height: 100%;
+            border-left: 3px solid #ffffff;
+            right: -8px;
+            animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
         }
 
         /* About Section */
+        .about .glass {
+            padding: 2rem;
+        }
         .about .highlight {
-            color: #a855f7;
+            color: #7c3aed;
         }
         .about .label {
             font-weight: 600;
             color: #ffffff;
         }
         .About-image {
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+        .About-image:hover {
+            transform: scale(1.05);
         }
 
         /* Services Section */
         .work-list .card {
-            background: #1a1a1a;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
             border: none;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         .work-list .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(124, 58, 237, 0.3);
         }
         .work-list .card-img-top {
-            height: 250px;
+            height: 260px;
             object-fit: cover;
-            filter: brightness(85%);
+            filter: brightness(90%);
+            transition: filter 0.3s ease;
+        }
+        .work-list .card:hover .card-img-top {
+            filter: brightness(100%);
         }
         .work-list .card-body {
-            background: rgba(0, 0, 0, 0.85);
-            color: #d4d4d4;
+            background: rgba(0, 0, 0, 0.8);
+            color: #e0e0e0;
             position: absolute;
             bottom: 0;
             width: 100%;
             opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 1rem;
+            transition: opacity 0.4s ease;
+            padding: 1.5rem;
         }
         .work-list .card:hover .card-body {
             opacity: 1;
@@ -171,15 +229,25 @@
         .project-card {
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
-            background: #1a1a1a;
-            border: none;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(124, 58, 237, 0.3);
         }
         .project-card img {
-            height: 220px;
+            height: 230px;
             object-fit: cover;
             width: 100%;
-            filter: brightness(85%);
+            filter: brightness(90%);
+            transition: filter 0.3s ease;
+        }
+        .project-card:hover img {
+            filter: brightness(100%);
         }
         .project-card .overlay {
             position: absolute;
@@ -187,22 +255,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            color: #d4d4d4;
+            background: rgba(0, 0, 0, 0.85);
+            color: #e0e0e0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             opacity: 0;
-            transition: opacity 0.3s ease;
-            padding: 1rem;
+            transition: opacity 0.4s ease;
+            padding: 1.5rem;
         }
         .project-card:hover .overlay {
             opacity: 1;
         }
         .project-card .overlay img {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             filter: brightness(100%);
         }
 
@@ -211,273 +279,221 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            margin-bottom: 1.5rem;
-            background: #cbbdd1;
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.8rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease;
+        }
+        .block .card:hover {
+            transform: translateY(-8px);
         }
         .block .card-img {
-            width: 280px;
-            height: 180px;
+            width: 400px;
+            height: 300px;
             object-fit: cover;
-            border-radius: 12px 0 0 12px;
+            border-radius: 16px 0 0 16px;
         }
         .block .card-body {
-            color: #333333;
+            color: #652497;
+            padding: 1.5rem;
         }
         .block .card-body h1, .block .card-body h2 {
-            color: #333333;
+            color: #7b289c;
         }
         .block .card-body p {
-            color: #555555;
+            color: #444444;
         }
         .block .btn {
-            background-color: #521c84;
+            background: linear-gradient(45deg, #7c3aed, #a855f7);
             border: none;
-            border-radius: 30px;
-            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            padding: 0.6rem 1.5rem;
             color: #ffffff;
-            font-weight: 500;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         .block .btn:hover {
-            background-color: #9333ea;
-            box-shadow: 0 4px 8px rgba(168, 85, 247, 0.3);
+            background: linear-gradient(45deg, #6d28d9, #9333ea);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+            transform: translateY(-3px);
         }
 
         /* Skills Section */
         .skill-container .card {
-            margin-bottom: 1rem;
-            background: #1a1a1a;
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease;
+        }
+        .skill-container .card:hover {
+            transform: translateY(-5px);
         }
         .skill-container .progress {
-            height: 1.2rem;
-            background: #2a2a2a;
-            border-radius: 6px;
+            height: 1.3rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
         }
         .skill-container .progress-bar {
-            background-color: #a855f7;
+            background: linear-gradient(45deg, #7c3aed, #a855f7);
         }
         .skill-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 1rem;
             justify-content: center;
         }
         .skill-item {
             text-align: center;
-            width: 90px;
-            background: #1a1a1a;
-            padding: 0.8rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 12px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         .skill-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 16px rgba(124, 58, 237, 0.3);
         }
         .skill-item img {
-            width: 48px;
-            height: 48px;
-            filter: brightness(85%);
+            width: 50px;
+            height: 50px;
+            filter: brightness(90%);
+            transition: filter 0.3s ease;
+        }
+        .skill-item:hover img {
+            filter: brightness(100%);
         }
         .skill-item label {
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #ffffff;
-            margin-top: 0.5rem;
+            margin-top: 0.6rem;
         }
 
         /* Contact Section */
         .contact-container form {
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
         .contact-container .form-control {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            color: #d4d4d4;
-            border-radius: 8px;
-            padding: 0.7rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #e0e0e0;
+            border-radius: 12px;
+            padding: 0.8rem;
+            transition: border-color 0.3s ease;
+        }
+        .contact-container .form-control:focus {
+            border-color: #7c3aed;
+            box-shadow: 0 0 8px rgba(124, 58, 237, 0.3);
         }
         .contact-container .form-control::placeholder {
-            color: #a1a1a1;
+            color: #b0b0b0;
         }
         .contact-button {
-            background-color: #a855f7;
+            background: linear-gradient(45deg, #7c3aed, #a855f7);
             border: none;
-            border-radius: 30px;
-            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            padding: 0.9rem 2rem;
             width: 100%;
             color: #ffffff;
             font-weight: 600;
+            transition: all 0.3s ease;
         }
         .contact-button:hover {
-            background-color: #9333ea;
-            box-shadow: 0 4px 8px rgba(168, 85, 247, 0.3);
+            background: linear-gradient(45deg, #6d28d9, #9333ea);
+            box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+            transform: translateY(-3px);
         }
 
         /* Footer */
         .footer-container {
-            background: #141414;
-            color: #d4d4d4;
-            padding: 2.5rem 0;
+            background: rgba(20, 20, 20, 0.9);
+            backdrop-filter: blur(8px);
+            color: #d0d0d0;
+            padding: 3rem 0;
         }
         .footer-bottom {
-            background: #0a0a0a;
+            background: rgba(10, 10, 10, 0.9);
             text-align: center;
-            padding: 1rem 0;
-            color: #a1a1a1;
+            padding: 1.2rem 0;
+            color: #b0b0b0;
         }
         .footer-container a {
-            color: #a855f7;
+            color: #7c3aed;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .footer-container a:hover {
             color: #9333ea;
             text-decoration: underline;
         }
         .footer-container img {
-            width: 18px;
-            height: 18px;
-            margin-right: 8px;
-            filter: brightness(85%);
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            filter: brightness(90%);
         }
         .social-icons img {
-            width: 36px;
-            height: 36px;
-            filter: brightness(85%);
+            width: 40px;
+            height: 40px;
+            filter: brightness(90%);
         }
         .social-icons img:hover {
             filter: brightness(100%);
         }
-        .text-animation {
-  font-size: 34px;
-  font-weight: 700;
-  min-width: 280px;
-  animation: topIn 1.4s ease-in-out forwards;
-  opacity: 0;
-  animation-delay: 0.2s;
-}
 
-.text-animation span {
-  position: relative;
-}
-
-.text-animation span::before {
-  content: 'Web Developer';
-  color: rgb(215, 72, 255);
-  animation: words 20s infinite;
-}
-
-.text-animation span::after {
-  content: "";
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid rgb(0, 0, 0);
-  right: -8px;
-  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
-
-}
-
-@keyframes bottomIn {
-  from {
-    transform: translateY(250px) ;
-  }
-  to {
-    transform: translateY(0) ;
-    opacity: 1;
-  }
-}
-
-@keyframes topIn {
-  from {
-    transform: translateY(-100px) ;
-  }
-  to {
-    transform: translateY(0) ;
-    opacity: 1;
-  }
-}
-
-@keyframes imgIn {
-  from {
-    transform: translateY(250px) scale(0.8) ;
-  }
-  to {
-    transform: translateY(0) scale(1) ;
-    opacity: 1;
-  }
-}
-
-
-
-
-
-
-
-@keyframes words {
-
-  0%,
-  20% {
-      content: 'Web Developer';
-  }
-
-  40% {
-      content: 'UI/UX Designer';
-  }
-
-  60% {
-      content: 'Software Developer';
-  }
-
-  80% {
-      content: 'Photographer';
-  }
-
-  80% {
-      content: 'Writer';
-  }
-}
-
-@keyframes typing {
-
-  10%,
-  15%,
-  30%,
-  35%,
-  50%,
-  55%,
-  70%,
-  75%,
-  90%,
-  95% {
-      width: 0;
-  }
-
-  5%,
-  20%,
-  25%,
-  40%,
-  45%,
-  60%,
-  65%,
-  80%,
-  85% {
-      width: calc(100% + 8px);
-  }
-}
-
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes imgIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes words {
+            0%, 20% { content: 'Web Developer'; }
+            21%, 40% { content: 'UI/UX Designer'; }
+            41%, 60% { content: 'Software Developer'; }
+            61%, 80% { content: 'Photographer'; }
+            81%, 100% { content: 'Writer'; }
+        }
+        @keyframes typing {
+            10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 0; }
+            5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% { width: calc(100% + 8px); }
+        }
+        @keyframes cursor {
+            0% { border-left-color: #7c3aed; }
+            50% { border-left-color: transparent; }
+            100% { border-left-color: #7c3aed; }
+        }
     </style>
 </head>
 <body>
     <!-- Navbar -->
     <header class="header">
-        <nav class="navbar navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-lg fixed-top glass">
             <div class="container">
                 <a class="navbar-brand" href="#home">Meet me</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -515,18 +531,18 @@
     <!-- Home Section -->
     <section class="container-fluid" id="home">
         <div class="row align-items-center">
-            <div class="col-lg-6 text-center text-lg-start">
-                <div class="text-section p-4">
+            <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right" data-aos-duration="1000">
+                <div class="text-section p-4 glass">
                     <h2 class="letter">Hello It's Me</h2>
                     <h1 class="letter">Ahasna Charumee</h1>
                     <h3 class="text-animation">I'm a <span></span></h3>
-                    <p style="color: white;" class="animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">Specializing in creating innovative and user-friendly solutions.</p>
+                    <p style="color: #e0e0e0;">Specializing in creating innovative and user-friendly solutions.</p>
                     <div class="social-icons my-4">
                         <a href="https://www.linkedin.com/in/ahasna-charumee-a97714346" target="_blank">
                             <img src="/assets/images/icons8-linkedin-circled-50.png" alt="LinkedIn">
                         </a>
                         <a href="https://x.com/AhasnaC" target="_blank">
-                            <img src="/assets/images/icons8-twitter-50.png" alt="Twitter" style="height: 35px;">
+                            <img src="/assets/images/icons8-twitter-50.png" alt="Twitter" style="height: 40px;">
                         </a>
                         <a href="https://github.com/AhasnaCharumee" target="_blank">
                             <img src="/assets/images/icons8-github-50.png" alt="GitHub">
@@ -535,7 +551,7 @@
                     <button class="cv-button">Download CV</button>
                 </div>
             </div>
-            <div class="col-lg-6 text-center">
+            <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-duration="1000">
                 <div class="image-section p-4">
                     <img src="/assets/images/m.jpg" alt="Ahasna Charumee" class="profile-image img-fluid">
                 </div>
@@ -545,14 +561,14 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-        <h1 class="text-center mb-5">About Me</h1>
+        <h1 class="text-center mb-5" data-aos="fade-up">About Me</h1>
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 text-center">
+                <div class="col-lg-6 text-center" data-aos="fade-right" data-aos-duration="1000">
                     <img src="/assets/images/about.png" alt="Ahasna Charumee" class="About-image img-fluid mb-4">
                 </div>
-                <div class="col-lg-6">
-                    <div class="info-section">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="info-section glass">
                         <div class="details">
                             <p><span class="label">Name:</span> <span class="highlight">U.H.Ahasna Charumee</span></p>
                             <p><span class="label">Date of Birth:</span> <span class="highlight">May 02, 2003</span></p>
@@ -569,10 +585,10 @@
 
     <!-- Services Section -->
     <section class="service" id="service">
-        <h1 class="text-center mb-5">Our Services</h1>
+        <h1 class="text-center mb-5" data-aos="fade-up">Our Services</h1>
         <div class="container">
             <div class="row work-list g-4">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card">
                         <img src="/assets/images/critical-thinking_15577835.gif" class="card-img-top" alt="Service 1">
                         <div class="card-body">
@@ -581,7 +597,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card">
                         <img src="/assets/images/programmer_17905521.gif" class="card-img-top" alt="Service 2">
                         <div class="card-body">
@@ -590,7 +606,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card">
                         <img src="/assets/images/layout_17122596.gif" class="card-img-top" alt="Service 3">
                         <div class="card-body">
@@ -605,10 +621,10 @@
 
     <!-- Projects Section -->
     <section id="project">
-        <h1 class="text-center mb-5">Our Projects</h1>
+        <h1 class="text-center mb-5" data-aos="fade-up">Our Projects</h1>
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card card">
                         <img src="https://media.istockphoto.com/id/1047259374/photo/programming-source-code-abstract-background.jpg?s=612x612&w=0&k=20&c=07DAFiujCb58Zgu5ZArLprHiSKew5pCGqbTnop9GclA=" alt="Project 1" class="card-img-top">
                         <div class="overlay">
@@ -620,7 +636,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card">
                         <img src="/assets/images/layered.png" alt="Project 2" class="card-img-top">
                         <div class="overlay">
@@ -632,7 +648,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card card">
                         <img src="https://webartdevelopers.com/blog/wp-content/uploads/2020/12/tic-tac-toe-game-2.png" alt="Project 3" class="card-img-top">
                         <div class="overlay">
@@ -644,7 +660,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card card">
                         <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Project 4" class="card-img-top">
                         <div class="overlay">
@@ -656,7 +672,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card">
                         <img src="https://cdn.dribbble.com/userupload/12867525/file/original-58c9cecccf50ae44bb62131a583dce8b.jpg?resize=400x0" alt="Project 5" class="card-img-top">
                         <div class="overlay">
@@ -668,7 +684,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card card">
                         <img src="/assets/images/image.png" alt="Project 6" class="card-img-top">
                         <div class="overlay">
@@ -680,7 +696,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card card">
                         <img src="/assets/images/Screenshot 2025-04-22 153155.png" alt="Project 7" class="card-img-top">
                         <div class="overlay">
@@ -692,7 +708,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card">
                         <img src="/assets/images/Screenshot 2025-03-31 211218.png" alt="Project 8" class="card-img-top">
                         <div class="overlay">
@@ -704,7 +720,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card card">
                         <img src="/assets/images/Screenshot 2025-04-22 161809.png" alt="Project 9" class="card-img-top">
                         <div class="overlay">
@@ -716,21 +732,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-card card">
-                        <img src="/assets/images/job.png" alt="Project 9" class="card-img-top">
+                        <img src="/assets/images/job.png" alt="Project 10" class="card-img-top">
                         <div class="overlay">
                             <h3>Job Management System</h3>
-                            <p>features like job creation, editing, deletion, status updates, and search functionality.</p>
+                            <p>Features like job creation, editing, deletion, status updates, and search functionality.</p>
                             <a href="https://github.com/AhasnaCharumee/Job-Management-System" target="_blank">
                                 <img src="/assets/images/icons8-arrow-50.png" alt="see more">
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-card card">
-                        <img src="/assets/images/com.png" alt="Project 9" class="card-img-top">
+                        <img src="/assets/images/com.png" alt="Project 11" class="card-img-top">
                         <div class="overlay">
                             <h3>Complaint Management System</h3>
                             <p>A full-stack web-based application developed for managing public complaints within a municipal organization.</p>
@@ -740,9 +756,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-card card">
-                        <img src="/assets/images/orm.png" alt="Project 9" class="card-img-top">
+                        <img src="/assets/images/orm.png" alt="Project 12" class="card-img-top">
                         <div class="overlay">
                             <h3>Mental Health Center</h3>
                             <p>A comprehensive digital system developed to manage patient registrations, therapy programs, session scheduling, therapist management, and financial transactions for the Serenity Mental Health Therapy Center in Sri Lanka.</p>
@@ -758,10 +774,10 @@
 
     <!-- Assignments Section -->
     <section class="assignments" id="assignments">
-        <h1 class="text-center mb-5">Assignments</h1>
+        <h1 class="text-center mb-5" data-aos="fade-up">Assignments</h1>
         <div class="container">
             <div class="row g-4">
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -778,7 +794,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -795,7 +811,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -812,7 +828,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -829,7 +845,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -846,7 +862,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -863,7 +879,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -880,7 +896,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -897,7 +913,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -914,7 +930,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -931,7 +947,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -948,7 +964,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -965,7 +981,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -982,7 +998,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -999,7 +1015,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -1016,7 +1032,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="100">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -1033,7 +1049,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="200">
                     <div class="card block">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -1055,79 +1071,79 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="bg-light">
-        <h1 style="color: rgb(0, 0, 0);" class="text-center mb-5">Skills</h1>
+    <section id="skills">
+        <h1 class="text-center mb-5" data-aos="fade-up">Skills</h1>
         <div class="container">
             <div class="row skill-container g-4">
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
                     <div class="card skill-card java">
                         <div class="card-body d-flex align-items-center">
-                            <span  style="color: white;"  class="skill flex-shrink-0 me-3"style>Java</span>
+                            <span class="skill flex-shrink-0 me-3">Java</span>
                             <div class="progress flex-grow-1">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%; background-color: #a855f7;" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 65%;" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <span style="color: white;" class="percentage ms-3">65%</span>
+                            <span class="percentage ms-3">65%</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="card skill-card mysql">
                         <div class="card-body d-flex align-items-center">
-                            <span style="color: white;" class="skill flex-shrink-0 me-3">My SQL</span>
+                            <span class="skill flex-shrink-0 me-3">MySQL</span>
                             <div class="progress flex-grow-1">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%; background-color: #a855f7;" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 60%;" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <span style="color: white;" class="percentage ms-3">60%</span>
+                            <span class="percentage ms-3">60%</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
                     <div class="card skill-card java">
                         <div class="card-body d-flex align-items-center">
-                            <span style="color: white;" class="skill flex-shrink-0 me-3">Java FX</span>
+                            <span class="skill flex-shrink-0 me-3">JavaFX</span>
                             <div class="progress flex-grow-1">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%; background-color: #a855f7;" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 90%;" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <span style="color: white;" class="percentage ms-3">90%</span>
+                            <span class="percentage ms-3">90%</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="card skill-card java-script">
                         <div class="card-body d-flex align-items-center">
-                            <span style="color: white;" class="skill flex-shrink-0 me-3">Java Script</span>
+                            <span class="skill flex-shrink-0 me-3">JavaScript</span>
                             <div class="progress flex-grow-1">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%; background-color: #a855f7;" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 45%;" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <span style="color: white;" class="percentage ms-3">45%</span>
+                            <span class="percentage ms-3">45%</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
                     <div class="card skill-card html">
                         <div class="card-body d-flex align-items-center">
-                            <span style="color: white;" class="skill flex-shrink-0 me-3">HTML</span>
+                            <span class="skill flex-shrink-0 me-3">HTML</span>
                             <div class="progress flex-grow-1">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%; background-color: #a855f7;" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%;" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <span style="color: white;" class="percentage ms-3">85%</span>
+                            <span class="percentage ms-3">85%</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
                     <div class="card skill-card css">
                         <div class="card-body d-flex align-items-center">
-                            <span style="color: white;" class="skill flex-shrink-0 me-3">CSS</span>
+                            <span class="skill flex-shrink-0 me-3">CSS</span>
                             <div class="progress flex-grow-1">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%; background-color: #a855f7;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <span style="color: white;" class="percentage ms-3">75%</span>
+                            <span class="percentage ms-3">75%</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <h1 style="color: rgb(0, 0, 0);" class="text-center my-5">Learned Languages and Tools</h1>
-            <div class="skill-group">
+            <h1 class="text-center my-5" data-aos="fade-up">Learned Languages and Tools</h1>
+            <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
                 <div class="skill-item">
                     <img src="/assets/images/icons8-intellij-idea-144.png" alt="IntelliJ IDEA">
                     <label>INTELLIJ IDEA</label>
@@ -1181,8 +1197,8 @@
                     <label>BOOTSTRAP</label>
                 </div>
             </div>
-            <h1 style="color: rgb(0, 0, 0);" class="text-center my-5">Learning Languages and Tools</h1>
-            <div class="skill-group">
+            <h1 class="text-center my-5" data-aos="fade-up">Learning Languages and Tools</h1>
+            <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
                 <div class="skill-item">
                     <img src="/assets/images/icons8-mongo-db-96.png" alt="MongoDB">
                     <label>MONGODB</label>
@@ -1209,8 +1225,8 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h1 class="text-center mb-5">Contact Me</h1>
-        <div class="container contact-container">
+        <h1 class="text-center mb-5" data-aos="fade-up">Contact Me</h1>
+        <div class="container contact-container glass">
             <form>
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -1238,12 +1254,12 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-container">
+        <div class="footer-container glass">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 footer-left">
+                    <div class="col-md-4 footer-left" >
                         <h1>About</h1>
-                        <h5>Feel free to explore my projects and reach out if you want to collaborate!</h5>
+                        <p>Feel free to explore my <br>projects and reach out <br>if you want to collaborate!</p>
                         <div class="social-icons mt-4">
                             <a href="https://x.com/AhasnaC" target="_blank">
                                 <img src="/assets/images/icons8-linkedin-circled-50.png" alt="Twitter">
@@ -1256,7 +1272,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4 footer-center">
+                    <div class="col-md-4 footer-center" >
                         <h1>Links</h1>
                         <p><img src="/assets/images/icons8-arrow-32.png" alt="arrow"><a href="#home">Home</a></p>
                         <p><img src="/assets/images/icons8-arrow-32.png" alt="arrow"><a href="#about">About</a></p>
@@ -1266,7 +1282,7 @@
                         <p><img src="/assets/images/icons8-arrow-32.png" alt="arrow"><a href="#skills">Skills</a></p>
                         <p><img src="/assets/images/icons8-arrow-32.png" alt="arrow"><a href="#contact">Contact</a></p>
                     </div>
-                    <div class="col-md-4 footer-section-contact">
+                    <div class="col-md-4 footer-section-contact" >
                         <h1>Have a Questions?</h1>
                         <p><img src="/assets/images/icons8-location-24.png" alt="Location">First Lane, Welipitiya, Sri Lanka.</p>
                         <p><img src="/assets/images/icons8-call-30 (1).png" alt="Phone">+94 783113149</p>
@@ -1276,12 +1292,21 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <h3>© 2025 Ahasna Charumee. All rights reserved.</h3>
+            <h5>© 2025 Ahasna Charumee. All rights reserved.</h5>
         </div>
     </footer>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
